@@ -3,16 +3,35 @@
 // 78 -> третьей цифры нет
 // 32679 -> 6
 
-Console.Write("Введите число: ");
-int number = Convert.ToInt32(Console.ReadLine());
-int thirdDigit = number / 10 % 10;
-
-if(number < 99)
+int Promt(string meassage)
 {
-    Console.WriteLine("Третьей цифры нет");
+    System.Console.Write(meassage);
+    string value = Console.ReadLine();
+    int result = Convert.ToInt32(value);
+    return result;
 }
-else
+
+int GetThirdRank(int number)
 {
-    Console.WriteLine("Введенное число: " + number);
-    Console.WriteLine("Вторая цифра: " + secondDigit);
+    while (number > 999)
+    {
+        number /= 10;
+    }
+    return number % 10;
+}
+
+bool ValidateNumber(int number)
+{
+    if (number < 100)
+    {
+        Console.WriteLine("Третьй цифры нет");
+        return false;
+    }
+    return true;
+}
+
+int number = Promt("Ввведите число: ");
+if (ValidateNumber(number))
+{
+    Console.WriteLine(GetThirdRank(number));
 }

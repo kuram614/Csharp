@@ -10,7 +10,7 @@ int number = Convert.ToInt32(Console.ReadLine());
 int num1 = number % 7;
 int num2 = number % 23;
 
-if (num1 == 0 && num2 == 0)
+if (num1 == 0 && num2 == 0)//двойное условие "и" (можно и больше)
 {
     Console.Write("yes");
 }

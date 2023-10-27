@@ -14,7 +14,7 @@ int num2 = Convert.ToInt32(Console.ReadLine());
 int res1 = num1 % (num2*num2);
 int res2 = num2 % (num1*num1);
 
-if(res1 == 0 || res2 == 0)
+if(res1 == 0 || res2 == 0)// "||" - любое из условий истино
 {
     Console.WriteLine("Да");
 }

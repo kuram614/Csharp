@@ -4,27 +4,63 @@
 // точка.
 
 int WorkWithUser(string message)
+
 {
     Console.Write(message);
     int number = int.Parse(Console.ReadLine());
     return number;
 }
 
-void SearchQuarter(int x, int y)
+int[] WorkWithUser2(string message)
 {
-    if (x > 0 && y > 0)
+    Console.WriteLine(message);
+    int[] array = new int[2];
+    for(int i = 0;i < array.Length;i++)
+    {
+        array[i] = int.Parse(Console.ReadLine());
+    }
+    return array;
+}
+
+// void SearchQuarter(int x, int y)
+// {
+//     if (x > 0 && y > 0)
+//     {
+//         Console.WriteLine("I четверть");
+//     }
+//     else if (x < 0 && y > 0)
+//     {
+//         Console.WriteLine("II четверть");
+//     }
+//     else if (x < 0 && y < 0)
+//     {
+//         Console.WriteLine("III четверть");
+//     }
+//     else if (x > 0 && y < 0)
+//     {
+//         Console.WriteLine("IV четверть");
+//     }
+//     else
+//     {
+//         Console.WriteLine("Неверный ввод");
+//     }
+// }
+
+void SearchQuarter2(int[] arr)
+{
+    if (arr[0] > 0 && arr[1] > 0)
     {
         Console.WriteLine("I четверть");
     }
-    else if (x < 0 && y > 0)
+    else if (arr[0] < 0 && arr[1] > 0)
     {
         Console.WriteLine("II четверть");
     }
-    else if (x < 0 && y < 0)
+    else if (arr[0] < 0 && arr[1] < 0)
     {
         Console.WriteLine("III четверть");
     }
-    else if (x > 0 && y < 0)
+    else if (arr[0] > 0 && arr[1] < 0)
     {
         Console.WriteLine("IV четверть");
     }
@@ -34,10 +70,14 @@ void SearchQuarter(int x, int y)
     }
 }
 
-int valueX = WorkWithUser("Введите координату X: ");
-int valueY = WorkWithUser("Введите координату Y: ");
-SearchQuarter(valueX, valueY);
+// int valueX = WorkWithUser("Введите координату X: ");
+// int valueY = WorkWithUser("Введите координату Y: ");
+// SearchQuarter(valueX, valueY);
 
-int valueX1 = WorkWithUser("Введите координату X: ");
-int valueY2 = WorkWithUser("Введите координату Y: ");
-SearchQuarter(valueX1, valueY2);
+// int valueX1 = WorkWithUser("Введите координату X: ");
+// int valueY2 = WorkWithUser("Введите координату Y: ");
+// SearchQuarter(valueX1, valueY2);
+
+int [] arrayValue = WorkWithUser2("Введите координаты точек");
+SearchQuarter2(arrayValue);
+
